@@ -10,27 +10,30 @@ import XCTest
 @testable import CustomCalculator
 
 class CustomCalculatorTests: XCTestCase {
-    
+
+    let ao = ArithmeticOperation.init()
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    
+
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+    func testPlus() {
+        XCTAssertEqual(2, ao.plus(a: 1, b: 1))
+        XCTAssertEqual(3, ao.plus(a: 1.5, b: 1.5))
+        XCTAssertEqual(0, ao.plus(a: 0, b: 0))
+        XCTAssertNotEqual(2, ao.plus(a: 1.5, b: 1))
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+
+    func testMinus() {
     }
-    
+
+    func testMultiply() {
+    }
+
+    func testDivide() {
+    }
 }
