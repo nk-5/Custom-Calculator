@@ -8,8 +8,28 @@
 
 import Foundation
 
+enum ArithmeticError: Error {
+    case ZeroDivide
+}
+
 class ArithmeticOperation {
     public func plus(a: Float, b: Float) -> Float {
         return a + b
+    }
+
+    public func minus(a: Float, b: Float) -> Float {
+        return a - b
+    }
+
+    public func multiply(a: Float, b: Float) -> Float {
+        return a * b
+    }
+
+    public func divide(a: Float, b: Float) -> Float {
+        return a / b
+    }
+
+    private func zeroDivide() throws {
+        throw ArithmeticError.ZeroDivide
     }
 }
