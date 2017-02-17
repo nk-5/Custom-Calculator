@@ -32,4 +32,10 @@ class ArithmeticOperation {
     private func zeroDivide() throws {
         throw ArithmeticError.ZeroDivide
     }
+
+    // Tax in Value is round
+    public func taxIn(a: Float) -> Float {
+        let tax: Float = 1.08
+        return (a * tax).rounded()
+    }
 }

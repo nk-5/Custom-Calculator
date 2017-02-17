@@ -51,4 +51,13 @@ class CustomCalculatorTests: XCTestCase {
         XCTAssertEqual(-0.5, ao.divide(a: -1, b: 2))
         XCTAssertNotEqual(0, ao.divide(a: 4, b: 0))
     }
+
+    func testTaxIn() {
+        XCTAssertEqual(1, ao.taxIn(a: 1))
+        XCTAssertEqual(108.0, ao.taxIn(a: 100))
+        XCTAssertEqual(0, ao.taxIn(a: 0))
+        XCTAssertEqual(-108.0, ao.taxIn(a: -100.0))
+        XCTAssertNotEqual(0, ao.taxIn(a: 100))
+        XCTAssertNotEqual(1.08, ao.taxIn(a: 1))
+    }
 }
