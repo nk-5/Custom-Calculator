@@ -60,4 +60,9 @@ class CustomCalculatorTests: XCTestCase {
         XCTAssertNotEqual(0, ao.taxIn(a: 100))
         XCTAssertNotEqual(1.08, ao.taxIn(a: 1))
     }
+
+    func testHasStrContainPoint() {
+        XCTAssertTrue(ao.hasStrContainPoint(str: "te.st"))
+        XCTAssertFalse(ao.hasStrContainPoint(str: "test"))
+    }
 }

@@ -38,4 +38,8 @@ class ArithmeticOperation {
         let tax: Float = 1.08
         return (a * tax).rounded()
     }
+
+    public func hasStrContainPoint(str: String) -> Bool {
+        return str.contains(".")
+    }
 }

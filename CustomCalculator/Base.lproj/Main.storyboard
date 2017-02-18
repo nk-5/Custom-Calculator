@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CustomCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="CustomCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -83,6 +83,9 @@
                                         <state key="normal" title="7">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchSeven:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HsN-Vk-QU5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPM-rw-A01" customClass="PressableButton" customModule="SwiftyButton">
                                         <rect key="frame" x="94" y="0.0" width="93.5" height="81.5"/>
@@ -90,6 +93,9 @@
                                         <state key="normal" title="8">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchEight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EwV-sj-MQj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsJ-1z-7Fy" customClass="PressableButton" customModule="SwiftyButton">
                                         <rect key="frame" x="187.5" y="0.0" width="94" height="81.5"/>
@@ -97,6 +103,9 @@
                                         <state key="normal" title="9">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchNine:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Bd-1Z-xG4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reu-Hd-67M" customClass="PressableButton" customModule="SwiftyButton">
                                         <rect key="frame" x="281.5" y="0.0" width="93.5" height="81.5"/>
@@ -119,6 +128,9 @@
                                         <state key="normal" title="4">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchFour:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q9f-lI-HJ8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNq-Ju-4TW" customClass="PressableButton" customModule="SwiftyButton">
                                         <rect key="frame" x="94" y="0.0" width="93.5" height="81.5"/>
@@ -126,6 +138,9 @@
                                         <state key="normal" title="5">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchFive:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gOH-Yo-obG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7b-Db-Fxp" customClass="PressableButton" customModule="SwiftyButton">
                                         <rect key="frame" x="187.5" y="0.0" width="94" height="81.5"/>
@@ -133,6 +148,9 @@
                                         <state key="normal" title="6">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchSix:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uub-T1-QQD"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uP-6g-A9N" customClass="PressableButton" customModule="SwiftyButton">
                                         <rect key="frame" x="281.5" y="0.0" width="93.5" height="81.5"/>
@@ -155,6 +173,9 @@
                                         <state key="normal" title="1">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2kC-Rh-jRM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqx-Xq-wMF" customClass="PressableButton" customModule="SwiftyButton">
                                         <rect key="frame" x="94" y="0.0" width="93.5" height="81.5"/>
@@ -162,6 +183,9 @@
                                         <state key="normal" title="2">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchTwo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sfa-px-bxs"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xk-bZ-wb0" customClass="PressableButton" customModule="SwiftyButton">
                                         <rect key="frame" x="187.5" y="0.0" width="94" height="81.5"/>
@@ -169,6 +193,9 @@
                                         <state key="normal" title="3">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchThree:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fVa-cq-RZr"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFM-nm-30Z" customClass="PressableButton" customModule="SwiftyButton">
                                         <rect key="frame" x="281.5" y="0.0" width="93.5" height="81.5"/>
@@ -194,6 +221,9 @@
                                         <state key="normal" title="0">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchZero:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Uk-FA-oZp"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJV-Ft-wPk" customClass="PressableButton" customModule="SwiftyButton">
                                         <rect key="frame" x="187.5" y="0.0" width="94" height="81.5"/>
@@ -201,6 +231,9 @@
                                         <state key="normal" title=".">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchPoint:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nFN-hn-amb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVf-qB-g94" customClass="PressableButton" customModule="SwiftyButton">
                                         <rect key="frame" x="281.5" y="0.0" width="93.5" height="81.5"/>
@@ -247,6 +280,9 @@
                             <constraint firstAttribute="trailing" secondItem="R3u-ID-9qm" secondAttribute="trailing" id="zlF-Qx-XKK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="result" destination="Eqd-Yt-adO" id="IwZ-CS-lhZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
