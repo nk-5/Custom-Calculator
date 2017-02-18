@@ -65,4 +65,29 @@ class CustomCalculatorTests: XCTestCase {
         XCTAssertTrue(ao.hasStrContainPoint(str: "te.st"))
         XCTAssertFalse(ao.hasStrContainPoint(str: "test"))
     }
+
+    func testCalc() {
+        XCTAssertEqual("2", ao.calc(leftOperand: "1", arithmetricOperation: "+", rightOperand: "1"))
+        XCTAssertEqual("0", ao.calc(leftOperand: "1", arithmetricOperation: "-", rightOperand: "1"))
+        XCTAssertEqual("1", ao.calc(leftOperand: "1", arithmetricOperation: "×", rightOperand: "1"))
+        XCTAssertEqual("1", ao.calc(leftOperand: "2", arithmetricOperation: "÷", rightOperand: "2"))
+    }
+
+    func testCheckOperand() {
+        XCTAssertTrue(ao.checkOperand(leftOperand: "left", arithmetricOperation: "+", rightOperand: "right"))
+        XCTAssertFalse(ao.checkOperand(leftOperand: "", arithmetricOperation: "+", rightOperand: "right"))
+        XCTAssertFalse(ao.checkOperand(leftOperand: "left", arithmetricOperation: "", rightOperand: "right"))
+        XCTAssertFalse(ao.checkOperand(leftOperand: "left", arithmetricOperation: "+", rightOperand: ""))
+    }
+
+    func testisStrExist() {
+        XCTAssertTrue(ao.isStrExist(str: "test"))
+        XCTAssertFalse(ao.isStrExist(str: ""))
+    }
+
+    func testCanConvertInt() {
+        XCTAssertTrue(ao.canConvertInt(str: "1.0"))
+        XCTAssertTrue(ao.canConvertInt(str: "100.0"))
+        XCTAssertFalse(ao.canConvertInt(str: "0.012"))
+    }
 }

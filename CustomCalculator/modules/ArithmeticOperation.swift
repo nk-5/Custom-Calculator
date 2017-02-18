@@ -48,34 +48,49 @@ class ArithmeticOperation {
 
     // Execute after checkOperand. So, argument is forceUnwrap
     public func calc(leftOperand: String!, arithmetricOperation: String!, rightOperand: String!) -> String {
+        var result: String?
+
         switch arithmetricOperation {
         case "+":
-            return String(self.plus(a: Float(leftOperand), b: Float(rightOperand)))
+            result = String(self.plus(a: Float(leftOperand), b: Float(rightOperand)))
         case "-":
-            return String(self.minus(a: Float(leftOperand), b: Float(rightOperand)))
+            result = String(self.minus(a: Float(leftOperand), b: Float(rightOperand)))
         case "×":
-            return String(self.multiply(a: Float(leftOperand), b: Float(rightOperand)))
+            result = String(format: "%.10f", self.multiply(a: Float(leftOperand), b: Float(rightOperand)))
         case "÷":
-            return String(self.divide(a: Float(leftOperand), b: Float(rightOperand)))
+            result = String(self.divide(a: Float(leftOperand), b: Float(rightOperand)))
         default: break
         }
-        return ""
+
+        guard let res: String = result else { return "" }
+        if self.canConvertInt(str: res) {
+            return String(Int(Float(res)!))
+        }
+        return res
     }
 
     public func checkOperand(leftOperand: String?, arithmetricOperation: String?, rightOperand: String?) -> Bool {
-        if self.checkStrLength(str: leftOperand) &&
-            self.checkStrLength(str: arithmetricOperation) &&
-            self.checkStrLength(str: rightOperand) {
+        if self.isStrExist(str: leftOperand) &&
+            self.isStrExist(str: arithmetricOperation) &&
+            self.isStrExist(str: rightOperand) {
             return true
         }
         return false
     }
 
-    public func checkStrLength(str: String?) -> Bool {
-        guard let str: String = str else {
+    public func isStrExist(str: String?) -> Bool {
+        guard let str: String = str else { return false }
+        if str.characters.count == 0 {
             return false
         }
-        if str.characters.count == 0 {
+        return true
+    }
+
+    // Check str's end is .0
+    public func canConvertInt(str: String) -> Bool {
+        let regex = try! NSRegularExpression(pattern: ".0")
+        let matches: Array = regex.matches(in: str, options: [], range: NSRange(location: str.characters.count - 2, length: 2))
+        if matches.count == 0 {
             return false
         }
         return true

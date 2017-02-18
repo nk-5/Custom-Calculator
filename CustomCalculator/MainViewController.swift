@@ -92,7 +92,7 @@ class MainViewController: UIViewController {
         if self.result.text == "0" {
             self.result.text = ""
         }
-        if aoModule.checkStrLength(str: self.arithmeticStatus) {
+        if aoModule.isStrExist(str: self.arithmeticStatus) {
             self.tmp = self.result.text
             self.result.text = ""
         }
