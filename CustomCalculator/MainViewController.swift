@@ -22,7 +22,7 @@ class MainViewController: UIViewController {
     let aoModule = ArithmeticOperation.init()
     var tmp: String?
     var arithmeticStatus: String?
-    var isSetOperator: Bool = false
+    var shouldCalcrate: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,9 +92,10 @@ class MainViewController: UIViewController {
         if self.result.text == "0" {
             self.result.text = ""
         }
-        if aoModule.isStrExist(str: self.arithmeticStatus) {
+        if aoModule.isStrExist(str: self.arithmeticStatus) && !self.shouldCalcrate {
             self.tmp = self.result.text
             self.result.text = ""
+            self.shouldCalcrate = true
         }
         self.result.text = self.result.text! + num
     }
@@ -114,6 +115,7 @@ class MainViewController: UIViewController {
                                                   rightOperand: self.result.text)
             self.arithmeticStatus = arithmeticOperator
             self.tmp = ""
+            self.shouldCalcrate = false
         } else {
             self.arithmeticStatus = arithmeticOperator
         }
