@@ -231,6 +231,9 @@
                                         <state key="normal" title=".">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchPoint:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nFN-hn-amb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVf-qB-g94" customClass="PressableButton" customModule="SwiftyButton">
                                         <rect key="frame" x="281.5" y="0.0" width="93.5" height="81.5"/>

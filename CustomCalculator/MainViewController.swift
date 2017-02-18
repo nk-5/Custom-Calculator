@@ -58,13 +58,20 @@ class MainViewController: UIViewController {
         self.connectNum(num: "9")
     }
 
+    @IBAction func didTouchPoint(_: Any) {
+        self.connectPoint(point: ".")
+    }
+
     private func connectNum(num: String) {
         if self.result.text == "0" {
             self.result.text = ""
         }
+        self.result.text = self.result.text! + num
+    }
 
-        if !hasArithmetic {
-            self.result.text = self.result.text! + num
+    private func connectPoint(point: String) {
+        if !ArithmeticOperation().hasStrContainPoint(str: self.result.text!) {
+            self.result.text = self.result.text! + point
         }
     }
 }
