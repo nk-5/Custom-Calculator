@@ -13,19 +13,19 @@ enum ArithmeticError: Error {
 }
 
 class ArithmeticOperation {
-    public func plus(a: Float, b: Float) -> Float {
+    public func plus(a: Float!, b: Float!) -> Float {
         return a + b
     }
 
-    public func minus(a: Float, b: Float) -> Float {
+    public func minus(a: Float!, b: Float!) -> Float {
         return a - b
     }
 
-    public func multiply(a: Float, b: Float) -> Float {
+    public func multiply(a: Float!, b: Float!) -> Float {
         return a * b
     }
 
-    public func divide(a: Float, b: Float) -> Float {
+    public func divide(a: Float!, b: Float!) -> Float {
         return a / b
     }
 
@@ -39,7 +39,45 @@ class ArithmeticOperation {
         return (a * tax).rounded()
     }
 
-    public func hasStrContainPoint(str: String) -> Bool {
+    public func hasStrContainPoint(str: String?) -> Bool {
+        guard let str: String = str else {
+            return false
+        }
         return str.contains(".")
+    }
+
+    // Execute after checkOperand. So, argument is forceUnwrap
+    public func calc(leftOperand: String!, arithmetricOperation: String!, rightOperand: String!) -> String {
+        switch arithmetricOperation {
+        case "+":
+            return String(self.plus(a: Float(leftOperand), b: Float(rightOperand)))
+        case "-":
+            return String(self.minus(a: Float(leftOperand), b: Float(rightOperand)))
+        case "×":
+            return String(self.multiply(a: Float(leftOperand), b: Float(rightOperand)))
+        case "÷":
+            return String(self.divide(a: Float(leftOperand), b: Float(rightOperand)))
+        default: break
+        }
+        return ""
+    }
+
+    public func checkOperand(leftOperand: String?, arithmetricOperation: String?, rightOperand: String?) -> Bool {
+        if self.checkStrLength(str: leftOperand) &&
+            self.checkStrLength(str: arithmetricOperation) &&
+            self.checkStrLength(str: rightOperand) {
+            return true
+        }
+        return false
+    }
+
+    public func checkStrLength(str: String?) -> Bool {
+        guard let str: String = str else {
+            return false
+        }
+        if str.characters.count == 0 {
+            return false
+        }
+        return true
     }
 }
