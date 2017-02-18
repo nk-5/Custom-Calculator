@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  CustomCalculator
 //
 //  Created by 中川 慶悟 on 2017/02/16.
@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyButton
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
