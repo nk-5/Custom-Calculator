@@ -9,10 +9,20 @@
 import UIKit
 import SwiftyButton
 
+enum ArithmeticOperator: String {
+    case plus = "+"
+    case minus = "-"
+    case multiply = "×"
+    case divide = "÷"
+}
+
 class MainViewController: UIViewController {
     @IBOutlet weak var result: UILabel!
+
+    let aoModule = ArithmeticOperation.init()
     var tmp: String?
-    var hasArithmetic: Bool = false
+    var arithmeticStatus: String?
+    var shouldCalcrate: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,16 +72,52 @@ class MainViewController: UIViewController {
         self.connectPoint(point: ".")
     }
 
+    @IBAction func didTouchPlus(_: Any) {
+        self.setArithmeticOperator(arithmeticOperator: ArithmeticOperator.plus.rawValue)
+    }
+
+    @IBAction func didTouchMinus(_: Any) {
+        self.setArithmeticOperator(arithmeticOperator: ArithmeticOperator.minus.rawValue)
+    }
+
+    @IBAction func didTouchMultiply(_: Any) {
+        self.setArithmeticOperator(arithmeticOperator: ArithmeticOperator.multiply.rawValue)
+    }
+
+    @IBAction func didTouchDivide(_: Any) {
+        self.setArithmeticOperator(arithmeticOperator: ArithmeticOperator.divide.rawValue)
+    }
+
     private func connectNum(num: String) {
         if self.result.text == "0" {
             self.result.text = ""
+        }
+        if aoModule.isStrExist(str: self.arithmeticStatus) && !self.shouldCalcrate {
+            self.tmp = self.result.text
+            self.result.text = ""
+            self.shouldCalcrate = true
         }
         self.result.text = self.result.text! + num
     }
 
     private func connectPoint(point: String) {
-        if !ArithmeticOperation().hasStrContainPoint(str: self.result.text!) {
+        if self.aoModule.hasStrContainPoint(str: self.result.text) {
             self.result.text = self.result.text! + point
+        }
+    }
+
+    private func setArithmeticOperator(arithmeticOperator: String) {
+        if self.aoModule.checkOperand(leftOperand: self.tmp,
+                                      arithmetricOperation: self.arithmeticStatus,
+                                      rightOperand: self.result.text) {
+            self.result.text = self.aoModule.calc(leftOperand: self.tmp,
+                                                  arithmetricOperation: self.arithmeticStatus,
+                                                  rightOperand: self.result.text)
+            self.arithmeticStatus = arithmeticOperator
+            self.tmp = ""
+            self.shouldCalcrate = false
+        } else {
+            self.arithmeticStatus = arithmeticOperator
         }
     }
 }

@@ -68,6 +68,9 @@
                                         <state key="normal" title="÷">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchDivide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f8n-cl-Fm7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -113,6 +116,9 @@
                                         <state key="normal" title="×">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchMultiply:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YJ8-Oc-bh7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -158,6 +164,9 @@
                                         <state key="normal" title="-">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchMinus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r1V-oe-D1o"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -203,6 +212,9 @@
                                         <state key="normal" title="+">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchPlus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AKT-e2-Knd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
