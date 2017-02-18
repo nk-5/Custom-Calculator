@@ -29,7 +29,7 @@ class ArithmeticOperation {
         return a / b
     }
 
-    private func zeroDivide() throws {
+    public func zeroDivide() throws {
         throw ArithmeticError.ZeroDivide
     }
 
