@@ -16,13 +16,21 @@ enum ArithmeticOperator: String {
     case divide = "÷"
 }
 
+struct Equal {
+    var arithmetric: String?
+    var tmp: String?
+}
+
 class MainViewController: UIViewController {
     @IBOutlet weak var result: UILabel!
 
     let aoModule = ArithmeticOperation.init()
+    var equal = Equal.init()
+
     var tmp: String?
     var arithmeticStatus: String?
     var shouldCalcrate: Bool = false
+    var isCalcrated: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +96,21 @@ class MainViewController: UIViewController {
         self.setArithmeticOperator(arithmeticOperator: ArithmeticOperator.divide.rawValue)
     }
 
+    @IBAction func didTouchEqual(_: Any) {
+        self.calc()
+    }
+
+    @IBAction func didTouchTaxIn(_: Any) {
+    }
+
+    @IBAction func didTouchClear(_: Any) {
+        self.clear()
+    }
+
+    @IBAction func didTouchAllClear(_: Any) {
+        self.allClear()
+    }
+
     private func connectNum(num: String) {
         if self.result.text == "0" {
             self.result.text = ""
@@ -109,7 +132,7 @@ class MainViewController: UIViewController {
     private func setArithmeticOperator(arithmeticOperator: String) {
         if self.aoModule.checkOperand(leftOperand: self.tmp,
                                       arithmetricOperation: self.arithmeticStatus,
-                                      rightOperand: self.result.text) {
+                                      rightOperand: self.result.text) && self.shouldCalcrate {
             self.result.text = self.aoModule.calc(leftOperand: self.tmp,
                                                   arithmetricOperation: self.arithmeticStatus,
                                                   rightOperand: self.result.text)
@@ -118,6 +141,55 @@ class MainViewController: UIViewController {
             self.shouldCalcrate = false
         } else {
             self.arithmeticStatus = arithmeticOperator
+            self.isCalcrated = false
+        }
+    }
+
+    private func calc() {
+        if !self.isCalcrated {
+            if self.aoModule.checkOperand(leftOperand: self.tmp,
+                                          arithmetricOperation: self.arithmeticStatus,
+                                          rightOperand: self.result.text) && self.shouldCalcrate {
+
+                equal.tmp = self.result.text
+                equal.arithmetric = self.arithmeticStatus
+                self.result.text = self.aoModule.calc(leftOperand: self.tmp,
+                                                      arithmetricOperation: self.arithmeticStatus,
+                                                      rightOperand: self.result.text)
+                self.isCalcrated = true
+                self.arithmeticStatus = ""
+                self.tmp = ""
+                self.shouldCalcrate = false
+            }
+        } else {
+            if self.aoModule.checkOperand(leftOperand: equal.tmp,
+                                          arithmetricOperation: equal.arithmetric,
+                                          rightOperand: self.result.text) {
+                self.result.text = self.aoModule.calc(leftOperand: self.result.text,
+                                                      arithmetricOperation: equal.arithmetric,
+                                                      rightOperand: equal.tmp)
+            }
+        }
+    }
+
+    private func allClear() {
+        self.tmp = ""
+        self.arithmeticStatus = ""
+        self.result.text = "0"
+    }
+
+    private func clear() {
+        var cleared: Bool = false
+        if self.aoModule.isStrExist(str: self.result.text) {
+            self.result.text = "0"
+            cleared = true
+        }
+        if !cleared && self.aoModule.isStrExist(str: self.arithmeticStatus) {
+            self.arithmeticStatus = ""
+            cleared = true
+        }
+        if !cleared && self.aoModule.isStrExist(str: self.tmp) {
+            self.tmp = ""
         }
     }
 }

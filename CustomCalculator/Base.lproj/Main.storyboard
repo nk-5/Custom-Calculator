@@ -47,6 +47,9 @@
                                         <state key="normal" title="AC">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchAllClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dPH-Hh-xX8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VO-eu-geo" customClass="PressableButton" customModule="SwiftyButton">
                                         <rect key="frame" x="94" y="0.0" width="93.5" height="81.5"/>
@@ -54,6 +57,9 @@
                                         <state key="normal" title="C">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7se-wK-oy8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZK-qZ-dww" customClass="PressableButton" customModule="SwiftyButton">
                                         <rect key="frame" x="187.5" y="0.0" width="94" height="81.5"/>
@@ -61,6 +67,9 @@
                                         <state key="normal" title="T">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchTaxIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4JG-hK-beq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyv-fw-CsS" customClass="PressableButton" customModule="SwiftyButton">
                                         <rect key="frame" x="281.5" y="0.0" width="93.5" height="81.5"/>
@@ -256,6 +265,9 @@
                                         <state key="normal" title="=">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchEqual:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qvd-Q9-khc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
