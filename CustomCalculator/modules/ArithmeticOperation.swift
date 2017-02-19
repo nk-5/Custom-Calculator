@@ -140,8 +140,14 @@ class ArithmeticOperation {
         return stack
     }
 
+    public func stackCombine(stack: Array<String>) -> String {
+        return stack.reduce("", { x, y in
+            x + y + " "
+        })
+    }
+
     public func isNumeric(str: String) -> Bool {
-        let regex = try! NSRegularExpression(pattern: "[0-9]")
+        let regex = try! NSRegularExpression(pattern: "[0-9]|\\.")
         let matches: Array = regex.matches(in: str, options: [], range: NSRange(location: 0, length: 1))
         if matches.count == 0 {
             return false

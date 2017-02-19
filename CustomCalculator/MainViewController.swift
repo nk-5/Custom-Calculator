@@ -16,6 +16,11 @@ enum ArithmeticOperator: String {
     case divide = "÷"
 }
 
+enum ArithmetricExpressionAction: String {
+    case add
+    case remove
+}
+
 struct Equal {
     var arithmetric: String?
     var tmp: String?
@@ -33,7 +38,7 @@ class MainViewController: UIViewController {
     var shouldCalcrate: Bool = false
     var isCalcrated: Bool = false
 
-    var stack: [String] = [String]()
+    var stack: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,7 +129,7 @@ class MainViewController: UIViewController {
             self.shouldCalcrate = true
         }
         self.result.text = self.result.text! + num
-        self.stack = aoModule.stackAdd(stack: self.stack, str: num)
+        self.manageArithmetricExpression(stack: self.stack, str: num, action: ArithmetricExpressionAction.add.rawValue)
     }
 
     private func connectPoint(point: String) {
@@ -147,6 +152,7 @@ class MainViewController: UIViewController {
             self.arithmeticStatus = arithmeticOperator
             self.isCalcrated = false
         }
+        self.manageArithmetricExpression(stack: self.stack, str: arithmeticOperator, action: ArithmetricExpressionAction.add.rawValue)
     }
 
     private func calc() {
@@ -195,5 +201,14 @@ class MainViewController: UIViewController {
         if !cleared && self.aoModule.isStrExist(str: self.tmp) {
             self.tmp = ""
         }
+    }
+
+    private func manageArithmetricExpression(stack: Array<String>, str: String, action: String) {
+        if action == ArithmetricExpressionAction.add.rawValue {
+            self.stack = aoModule.stackAdd(stack: stack, str: str)
+        } else {
+            self.stack = aoModule.stackRemove(stack: stack)
+        }
+        self.arithmetricExpression.text = aoModule.stackCombine(stack: stack)
     }
 }

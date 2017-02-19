@@ -274,7 +274,7 @@
                                     <constraint firstAttribute="width" secondItem="7RK-Mp-goe" secondAttribute="height" multiplier="23:5" id="hz2-nT-iJQ"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOK-zL-SMo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOK-zL-SMo">
                                 <rect key="frame" x="125" y="60.5" width="200" height="33.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="OvZ-al-Fyg"/>
