@@ -95,4 +95,66 @@ class ArithmeticOperation {
         }
         return true
     }
+
+    public func stackAdd(stack: Array<String>, str: String) -> Array<String> {
+        var stack: [String] = stack
+
+        // This scope in "" <- num
+        if stack.isEmpty && self.isNumeric(str: str) {
+            stack.append(str)
+            return stack
+        }
+
+        // This scode in 1 <- arithmetric
+        if isNumeric(str: stack[stack.endIndex - 1]) && self.isArithmetric(str: str) {
+            stack.append(str)
+            return stack
+        }
+
+        // This scope in 1 + <- num
+        if isArithmetric(str: stack[stack.endIndex - 1]) && self.isNumeric(str: str) {
+            stack.append(str)
+            return stack
+        }
+
+        // This scope in 1 + <- arithmetric
+        if isArithmetric(str: stack[stack.endIndex - 1]) && self.isArithmetric(str: str) {
+            stack.remove(at: stack.endIndex - 1)
+            stack.append(str)
+            return stack
+        }
+
+        // This scope in 1 <- num or 1 + 1 <- num
+        stack[stack.endIndex - 1] = stack[stack.endIndex - 1] + str
+        return stack
+    }
+
+    public func stackRemove(stack: Array<String>) -> Array<String> {
+        var stack: [String] = stack
+
+        if stack.isEmpty {
+            return stack
+        }
+
+        stack.remove(at: stack.endIndex - 1)
+        return stack
+    }
+
+    public func isNumeric(str: String) -> Bool {
+        let regex = try! NSRegularExpression(pattern: "[0-9]")
+        let matches: Array = regex.matches(in: str, options: [], range: NSRange(location: 0, length: 1))
+        if matches.count == 0 {
+            return false
+        }
+        return true
+    }
+
+    public func isArithmetric(str: String) -> Bool {
+        let regex = try! NSRegularExpression(pattern: "[+|\\-|×|÷]")
+        let matches: Array = regex.matches(in: str, options: [], range: NSRange(location: 0, length: 1))
+        if matches.count == 0 {
+            return false
+        }
+        return true
+    }
 }

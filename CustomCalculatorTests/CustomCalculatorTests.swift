@@ -90,4 +90,32 @@ class CustomCalculatorTests: XCTestCase {
         XCTAssertTrue(ao.canConvertInt(str: "100.0"))
         XCTAssertFalse(ao.canConvertInt(str: "0.012"))
     }
+
+    func testStackAdd() {
+        XCTAssertEqual(["1"], ao.stackAdd(stack: [], str: "1"))
+        XCTAssertEqual(["12"], ao.stackAdd(stack: ["1"], str: "2"))
+        XCTAssertEqual(["1", "+"], ao.stackAdd(stack: ["1"], str: "+"))
+        XCTAssertEqual(["1", "-"], ao.stackAdd(stack: ["1", "+"], str: "-"))
+        XCTAssertEqual(["1", "+", "2"], ao.stackAdd(stack: ["1", "+"], str: "2"))
+        XCTAssertEqual(["1", "+", "23"], ao.stackAdd(stack: ["1", "+", "2"], str: "3"))
+    }
+
+    func testStackRemove() {
+        XCTAssertEqual([], ao.stackRemove(stack: []))
+        XCTAssertEqual([], ao.stackRemove(stack: ["1"]))
+        XCTAssertEqual(["1"], ao.stackRemove(stack: ["1", "+"]))
+    }
+
+    func testIsNumeric() {
+        XCTAssertTrue(ao.isNumeric(str: "1"))
+        XCTAssertFalse(ao.isNumeric(str: "test"))
+    }
+
+    func testIsArithmetric() {
+        XCTAssertTrue(ao.isArithmetric(str: "+"))
+        XCTAssertTrue(ao.isArithmetric(str: "-"))
+        XCTAssertTrue(ao.isArithmetric(str: "×"))
+        XCTAssertTrue(ao.isArithmetric(str: "÷"))
+        XCTAssertFalse(ao.isArithmetric(str: "test"))
+    }
 }

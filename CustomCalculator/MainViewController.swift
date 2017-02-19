@@ -23,6 +23,7 @@ struct Equal {
 
 class MainViewController: UIViewController {
     @IBOutlet weak var result: UILabel!
+    @IBOutlet weak var arithmetricExpression: UILabel!
 
     let aoModule = ArithmeticOperation.init()
     var equal = Equal.init()
@@ -31,6 +32,8 @@ class MainViewController: UIViewController {
     var arithmeticStatus: String?
     var shouldCalcrate: Bool = false
     var isCalcrated: Bool = false
+
+    var stack: [String] = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,6 +124,7 @@ class MainViewController: UIViewController {
             self.shouldCalcrate = true
         }
         self.result.text = self.result.text! + num
+        self.stack = aoModule.stackAdd(stack: self.stack, str: num)
     }
 
     private func connectPoint(point: String) {
