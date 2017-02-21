@@ -140,6 +140,16 @@ class ArithmeticOperation {
         return stack
     }
 
+    public func stackReplace(stack: Array<String>, replaceStr: String) -> Array<String> {
+        var stack: [String] = stack
+
+        if stack.isEmpty {
+            return stack
+        }
+        stack.replaceSubrange(stack.endIndex - 1 ..< stack.endIndex, with: [replaceStr])
+        return stack
+    }
+
     public func stackCombine(stack: Array<String>) -> String {
         return stack.reduce("", { x, y in
             x + y + " "

@@ -106,6 +106,12 @@ class CustomCalculatorTests: XCTestCase {
         XCTAssertEqual(["1"], ao.stackRemove(stack: ["1", "+"]))
     }
 
+    func testStackReplace() {
+        XCTAssertEqual([], ao.stackReplace(stack: [], replaceStr: "test"))
+        XCTAssertEqual(["test"], ao.stackReplace(stack: ["1"], replaceStr: "test"))
+        XCTAssertEqual(["1", "test"], ao.stackReplace(stack: ["1", "+"], replaceStr: "test"))
+    }
+
     func testStackCombine() {
         XCTAssertEqual("1 + 1 ", ao.stackCombine(stack: ["1", "+", "1"]))
         XCTAssertEqual("1.1 / 1 ", ao.stackCombine(stack: ["1.1", "/", "1"]))
