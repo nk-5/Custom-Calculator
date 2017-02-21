@@ -154,8 +154,12 @@ class MainViewController: UIViewController {
     }
 
     private func taxIn() {
-        let taxInValue: Float = self.aoModule.taxIn(a: Float(self.result.text!)!)
-        self.result.text = String(taxInValue)
+        var taxInValue: String = String(self.aoModule.taxIn(a: Float(self.result.text!)!))
+        if self.aoModule.canConvertInt(str: taxInValue) {
+            taxInValue = String(Int(Float(taxInValue)!))
+        }
+        self.result.text = taxInValue
+        self.replaceArithmetricExpression(stack: self.stack, replaceStr: taxInValue)
     }
 
     private func calc() {
@@ -216,6 +220,11 @@ class MainViewController: UIViewController {
 
     private func removeArithmetricExpression() {
         self.stack = aoModule.stackRemove(stack: self.stack)
+        self.arithmetricExpression.text = aoModule.stackCombine(stack: self.stack)
+    }
+
+    private func replaceArithmetricExpression(stack: Array<String>, replaceStr: String) {
+        self.stack = self.aoModule.stackReplace(stack: stack, replaceStr: replaceStr)
         self.arithmetricExpression.text = aoModule.stackCombine(stack: self.stack)
     }
 }
