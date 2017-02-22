@@ -23,6 +23,7 @@ struct Equal {
 
 class MainViewController: UIViewController {
     @IBOutlet weak var result: UILabel!
+    @IBOutlet weak var arithmetricExpression: UILabel!
 
     let aoModule = ArithmeticOperation.init()
     var equal = Equal.init()
@@ -31,6 +32,8 @@ class MainViewController: UIViewController {
     var arithmeticStatus: String?
     var shouldCalcrate: Bool = false
     var isCalcrated: Bool = false
+
+    var stack: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,6 +104,7 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func didTouchTaxIn(_: Any) {
+        self.taxIn()
     }
 
     @IBAction func didTouchClear(_: Any) {
@@ -121,12 +125,15 @@ class MainViewController: UIViewController {
             self.shouldCalcrate = true
         }
         self.result.text = self.result.text! + num
+        self.addArithmetricExpression(str: num)
     }
 
     private func connectPoint(point: String) {
-        if self.aoModule.hasStrContainPoint(str: self.result.text) {
-            self.result.text = self.result.text! + point
+        if self.aoModule.hasStrContainPoint(str: self.result.text) { return }
+        if self.result.text == "0" {
+            self.addArithmetricExpression(str: "0.")
         }
+        self.result.text = self.result.text! + point
     }
 
     private func setArithmeticOperator(arithmeticOperator: String) {
@@ -143,6 +150,16 @@ class MainViewController: UIViewController {
             self.arithmeticStatus = arithmeticOperator
             self.isCalcrated = false
         }
+        self.addArithmetricExpression(str: arithmeticOperator)
+    }
+
+    private func taxIn() {
+        var taxInValue: String = String(self.aoModule.taxIn(a: Float(self.result.text!)!))
+        if self.aoModule.canConvertInt(str: taxInValue) {
+            taxInValue = String(Int(Float(taxInValue)!))
+        }
+        self.result.text = taxInValue
+        self.replaceArithmetricExpression(stack: self.stack, replaceStr: taxInValue)
     }
 
     private func calc() {
@@ -176,6 +193,8 @@ class MainViewController: UIViewController {
         self.tmp = ""
         self.arithmeticStatus = ""
         self.result.text = "0"
+        self.arithmetricExpression.text = ""
+        self.stack = []
     }
 
     private func clear() {
@@ -191,5 +210,21 @@ class MainViewController: UIViewController {
         if !cleared && self.aoModule.isStrExist(str: self.tmp) {
             self.tmp = ""
         }
+        self.removeArithmetricExpression()
+    }
+
+    private func addArithmetricExpression(str: String) {
+        self.stack = aoModule.stackAdd(stack: self.stack, str: str)
+        self.arithmetricExpression.text = aoModule.stackCombine(stack: self.stack)
+    }
+
+    private func removeArithmetricExpression() {
+        self.stack = aoModule.stackRemove(stack: self.stack)
+        self.arithmetricExpression.text = aoModule.stackCombine(stack: self.stack)
+    }
+
+    private func replaceArithmetricExpression(stack: Array<String>, replaceStr: String) {
+        self.stack = self.aoModule.stackReplace(stack: stack, replaceStr: replaceStr)
+        self.arithmetricExpression.text = aoModule.stackCombine(stack: self.stack)
     }
 }

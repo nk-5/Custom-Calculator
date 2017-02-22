@@ -274,6 +274,16 @@
                                     <constraint firstAttribute="width" secondItem="7RK-Mp-goe" secondAttribute="height" multiplier="23:5" id="hz2-nT-iJQ"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOK-zL-SMo">
+                                <rect key="frame" x="125" y="60.5" width="200" height="33.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="OvZ-al-Fyg"/>
+                                    <constraint firstAttribute="width" secondItem="AOK-zL-SMo" secondAttribute="height" multiplier="6:1" id="a0X-3d-eNi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -293,6 +303,7 @@
                             <constraint firstItem="Eqd-Yt-adO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SAU-rN-Zy8"/>
                             <constraint firstItem="7RK-Mp-goe" firstAttribute="top" secondItem="0Vr-Ew-Nmg" secondAttribute="bottom" id="Tve-uJ-puR"/>
                             <constraint firstItem="9Tv-ri-XjJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XgP-KV-hms"/>
+                            <constraint firstItem="Eqd-Yt-adO" firstAttribute="top" secondItem="AOK-zL-SMo" secondAttribute="bottom" constant="30" id="ceI-dd-r29"/>
                             <constraint firstItem="R3u-ID-9qm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g3K-Hf-cef"/>
                             <constraint firstItem="0Vr-Ew-Nmg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gal-FH-7Ml"/>
                             <constraint firstItem="n1t-lP-gIl" firstAttribute="top" secondItem="R3u-ID-9qm" secondAttribute="bottom" id="hna-h1-dgS"/>
@@ -301,10 +312,12 @@
                             <constraint firstItem="R3u-ID-9qm" firstAttribute="top" secondItem="9Tv-ri-XjJ" secondAttribute="bottom" id="n5I-iY-AwD"/>
                             <constraint firstItem="dSk-4h-d3o" firstAttribute="top" secondItem="7RK-Mp-goe" secondAttribute="bottom" id="pZY-RU-8rT"/>
                             <constraint firstItem="7RK-Mp-goe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wKr-D0-tyk"/>
+                            <constraint firstAttribute="trailing" secondItem="AOK-zL-SMo" secondAttribute="trailing" constant="50" id="zDn-u3-7tK"/>
                             <constraint firstAttribute="trailing" secondItem="R3u-ID-9qm" secondAttribute="trailing" id="zlF-Qx-XKK"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="arithmetricExpression" destination="AOK-zL-SMo" id="e4a-I9-Xgw"/>
                         <outlet property="result" destination="Eqd-Yt-adO" id="IwZ-CS-lhZ"/>
                     </connections>
                 </viewController>
