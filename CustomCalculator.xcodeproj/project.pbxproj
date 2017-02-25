@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		63A239DE43EBCC11AE67C925 /* Pods_CustomCalculatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6677D024C10CE4149B8118AE /* Pods_CustomCalculatorTests.framework */; };
 		964714AD1E583A21004E922B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964714AC1E583A21004E922B /* MainViewController.swift */; };
+		965662601E61F4A800AF029C /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656625F1E61F4A800AF029C /* SideMenuTableViewController.swift */; };
 		96F8A3151E55E20700381C51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F8A3141E55E20700381C51 /* AppDelegate.swift */; };
 		96F8A31A1E55E20700381C51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F8A3181E55E20700381C51 /* Main.storyboard */; };
 		96F8A31C1E55E20700381C51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96F8A31B1E55E20700381C51 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		7DFB6A8D7A6BCDF3F5F77B6A /* Pods-CustomCalculatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomCalculatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CustomCalculatorTests/Pods-CustomCalculatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8F8E2DB82C0367F67D148763 /* Pods-CustomCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CustomCalculator/Pods-CustomCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 		964714AC1E583A21004E922B /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9656625F1E61F4A800AF029C /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		96F8A3111E55E20700381C51 /* CustomCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F8A3141E55E20700381C51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96F8A3191E55E20700381C51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				96F8A31B1E55E20700381C51 /* Assets.xcassets */,
 				96F8A31D1E55E20700381C51 /* LaunchScreen.storyboard */,
 				96F8A3201E55E20700381C51 /* Info.plist */,
+				9656625F1E61F4A800AF029C /* SideMenuTableViewController.swift */,
 			);
 			path = CustomCalculator;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				964714AD1E583A21004E922B /* MainViewController.swift in Sources */,
 				96F8A3451E560D3E00381C51 /* ArithmeticOperation.swift in Sources */,
 				96F8A3151E55E20700381C51 /* AppDelegate.swift in Sources */,
+				965662601E61F4A800AF029C /* SideMenuTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
