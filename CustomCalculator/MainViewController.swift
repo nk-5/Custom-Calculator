@@ -124,6 +124,10 @@ class MainViewController: UIViewController {
             self.result.text = ""
             self.shouldCalcrate = true
         }
+        if self.isCalcrated {
+            self.result.text = ""
+            self.stack = []
+        }
         self.result.text = self.result.text! + num
         self.addArithmetricExpression(str: num)
     }

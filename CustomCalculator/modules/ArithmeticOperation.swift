@@ -99,6 +99,11 @@ class ArithmeticOperation {
     public func stackAdd(stack: Array<String>, str: String) -> Array<String> {
         var stack: [String] = stack
 
+        // This scope in "" <- arithmetric ( exception
+        if stack.isEmpty && self.isArithmetric(str: str) {
+            return stack
+        }
+
         // This scope in "" <- num
         if stack.isEmpty && self.isNumeric(str: str) {
             stack.append(str)
