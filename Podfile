@@ -5,6 +5,7 @@ target 'CustomCalculator' do
   use_frameworks!
 
   pod 'SwiftyButton'
+  pod 'SideMenu'
 
   target 'CustomCalculatorTests' do
     inherit! :search_paths
