@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GbK-xi-WKv" id="2B8-MN-M8S">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="背景設定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORr-rp-r6h">
@@ -42,7 +43,7 @@
                                 <rect key="frame" x="0.0" y="98" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M6r-us-ewr" id="7yT-xf-M7D">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="その他" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRC-Zr-vmY">
@@ -364,14 +365,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sja-gH-K1z">
-                                <rect key="frame" x="16" y="20" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="setting" translatesAutoresizingMaskIntoConstraints="NO" id="3Yp-a8-A2g">
+                                <rect key="frame" x="16" y="30" width="60" height="60"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="kVj-gx-CEh"/>
+                                    <constraint firstAttribute="width" constant="60" id="n9b-ej-Gc3"/>
+                                </constraints>
                                 <connections>
-                                    <segue destination="8io-Hm-KrX" kind="presentation" id="cGm-KA-BvM"/>
+                                    <outletCollection property="gestureRecognizers" destination="4t2-SH-85A" appends="YES" id="cKk-zk-XTS"/>
                                 </connections>
-                            </button>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -392,6 +396,8 @@
                             <constraint firstItem="7RK-Mp-goe" firstAttribute="top" secondItem="0Vr-Ew-Nmg" secondAttribute="bottom" id="Tve-uJ-puR"/>
                             <constraint firstItem="9Tv-ri-XjJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XgP-KV-hms"/>
                             <constraint firstItem="Eqd-Yt-adO" firstAttribute="top" secondItem="AOK-zL-SMo" secondAttribute="bottom" constant="30" id="ceI-dd-r29"/>
+                            <constraint firstItem="3Yp-a8-A2g" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="e0L-WV-0DF"/>
+                            <constraint firstItem="3Yp-a8-A2g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="efB-uc-APv"/>
                             <constraint firstItem="R3u-ID-9qm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g3K-Hf-cef"/>
                             <constraint firstItem="0Vr-Ew-Nmg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gal-FH-7Ml"/>
                             <constraint firstItem="n1t-lP-gIl" firstAttribute="top" secondItem="R3u-ID-9qm" secondAttribute="bottom" id="hna-h1-dgS"/>
@@ -410,8 +416,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4t2-SH-85A">
+                    <connections>
+                        <segue destination="8io-Hm-KrX" kind="presentation" id="S6x-hs-kB0"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-778" y="130"/>
+            <point key="canvasLocation" x="-778.39999999999998" y="129.98500749625188"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="setting" width="25" height="25"/>
+    </resources>
 </document>
