@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyButton
+import Photos
 
 enum ArithmeticOperator: String {
     case plus = "+"
@@ -19,6 +20,26 @@ enum ArithmeticOperator: String {
 struct Equal {
     var arithmetric: String?
     var tmp: String?
+}
+
+extension PHPhotoLibrary {
+    class func Authorization() {
+        PHPhotoLibrary.requestAuthorization { status in
+            switch status {
+            case .authorized:
+                print("Authorized")
+
+            case .denied:
+                print("Denied")
+
+            case .notDetermined:
+                print("NotDetermined")
+
+            case .restricted:
+                print("Restricted")
+            }
+        }
+    }
 }
 
 class MainViewController: UIViewController {
@@ -37,6 +58,7 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        PHPhotoLibrary.Authorization()
     }
 
     @IBAction func didTouchZero(_: Any) {
