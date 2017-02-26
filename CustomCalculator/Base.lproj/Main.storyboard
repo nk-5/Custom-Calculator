@@ -32,7 +32,7 @@
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <segue destination="TZp-i1-ieI" kind="presentation" id="uKD-nl-2Zf"/>
+                                                <segue destination="AFh-YW-QuW" kind="presentation" id="uKD-nl-2Zf"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -74,11 +74,11 @@
             </objects>
             <point key="canvasLocation" x="716" y="129.98500749625188"/>
         </scene>
-        <!--Photo Collection View Controller-->
+        <!--カメラロール-->
         <scene sceneID="dfB-xT-cnf">
             <objects>
-                <collectionViewController id="TZp-i1-ieI" customClass="PhotoCollectionViewController" customModule="CustomCalculator" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="K6w-cC-t0v">
+                <collectionViewController title="カメラロール" id="TZp-i1-ieI" customClass="PhotoCollectionViewController" customModule="CustomCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="K6w-cC-t0v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,7 +96,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="106" height="109"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kF2-fQ-ePl">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kF2-fQ-ePl">
                                             <rect key="frame" x="-67" y="-10" width="240" height="128"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -112,10 +112,15 @@
                             <outlet property="delegate" destination="TZp-i1-ieI" id="s1F-G2-SfB"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title="カメラロール" id="iNn-ge-uPR">
+                        <barButtonItem key="leftBarButtonItem" title="×" id="7ZP-Ei-BfN">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rc6-bT-OYi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1549.5999999999999" y="129.98500749625188"/>
+            <point key="canvasLocation" x="2488.8000000000002" y="129.98500749625188"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="slz-Dj-JJ3">
@@ -125,6 +130,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Ouw-ms-Vf7">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
                     </userDefinedRuntimeAttributes>
@@ -469,6 +478,24 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-778.39999999999998" y="129.98500749625188"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hkP-M5-GCq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AFh-YW-QuW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cym-R2-2MX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TZp-i1-ieI" kind="relationship" relationship="rootViewController" id="6gX-mN-SGQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8OF-vH-Ljy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1549.5999999999999" y="129.98500749625188"/>
         </scene>
     </scenes>
     <resources>
