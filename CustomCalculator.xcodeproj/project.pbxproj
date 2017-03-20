@@ -140,11 +140,11 @@
 				964714AC1E583A21004E922B /* MainViewController.swift */,
 				9656625F1E61F4A800AF029C /* SideMenuTableViewController.swift */,
 				9663C2871E631DAD00D77BE5 /* PhotoCollectionViewController.swift */,
+				9663C2891E632BAE00D77BE5 /* PhotoCollectionViewCell.swift */,
 				96F8A3181E55E20700381C51 /* Main.storyboard */,
 				96F8A31B1E55E20700381C51 /* Assets.xcassets */,
 				96F8A31D1E55E20700381C51 /* LaunchScreen.storyboard */,
 				96F8A3201E55E20700381C51 /* Info.plist */,
-				9663C2891E632BAE00D77BE5 /* PhotoCollectionViewCell.swift */,
 			);
 			path = CustomCalculator;
 			sourceTree = "<group>";

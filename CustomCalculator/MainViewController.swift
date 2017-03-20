@@ -137,6 +137,9 @@ class MainViewController: UIViewController {
         self.allClear()
     }
 
+    @IBAction func didTouchCloseCameraRool(segue _: UIStoryboardSegue) {
+    }
+
     private func connectNum(num: String) {
         if self.result.text == "0" {
             self.result.text = ""

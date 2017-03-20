@@ -9,9 +9,11 @@
 import UIKit
 import Photos
 
-private let reuseIdentifier = "image"
+private let reuseIdentifier: String = "image"
+private let cellCountInRow: CGFloat = 3
+private let cellPaddingSize: CGFloat = 1.0
 
-class PhotoCollectionViewController: UICollectionViewController {
+class PhotoCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     var images: [PHAsset] = []
 
     override func viewDidLoad() {
@@ -32,4 +34,14 @@ class PhotoCollectionViewController: UICollectionViewController {
         cell.setImage(assets: self.images[indexPath.row])
         return cell
     }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellSize: CGFloat = ((self.collectionView?.frame.size.width)! - cellPaddingSize * cellCountInRow) / cellCountInRow
+        return CGSize(width: cellSize, height: cellSize)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(0, 0, 0, 0)
+    }
+
 }
