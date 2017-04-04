@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jHG-C3-7WM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -78,7 +78,7 @@
         <scene sceneID="dfB-xT-cnf">
             <objects>
                 <collectionViewController title="カメラロール" id="TZp-i1-ieI" customClass="PhotoCollectionViewController" customModule="CustomCalculator" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="K6w-cC-t0v">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="K6w-cC-t0v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -446,10 +446,11 @@
                             <constraint firstAttribute="trailing" secondItem="7RK-Mp-goe" secondAttribute="trailing" id="1av-1r-xg4"/>
                             <constraint firstAttribute="trailing" secondItem="Eqd-Yt-adO" secondAttribute="trailing" constant="10" id="6VF-5o-UfW"/>
                             <constraint firstItem="n1t-lP-gIl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="73q-vr-iL2"/>
+                            <constraint firstItem="3Yp-a8-A2g" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="7q5-ki-mmr"/>
                             <constraint firstItem="7RK-Mp-goe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Cfi-aV-B62"/>
                             <constraint firstAttribute="trailing" secondItem="n1t-lP-gIl" secondAttribute="trailing" id="Ekl-Z3-apB"/>
                             <constraint firstAttribute="trailing" secondItem="9Tv-ri-XjJ" secondAttribute="trailing" id="Gz2-Eu-wd9"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dSk-4h-d3o" secondAttribute="bottom" id="KJi-7p-4QR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dSk-4h-d3o" secondAttribute="bottom" id="MQA-q6-dpd"/>
                             <constraint firstItem="R3u-ID-9qm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Myy-Fa-HnU"/>
                             <constraint firstItem="0Vr-Ew-Nmg" firstAttribute="top" secondItem="n1t-lP-gIl" secondAttribute="bottom" id="NDD-Nx-HJS"/>
                             <constraint firstItem="n1t-lP-gIl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ni9-QS-Yau"/>
@@ -460,7 +461,6 @@
                             <constraint firstItem="7RK-Mp-goe" firstAttribute="top" secondItem="0Vr-Ew-Nmg" secondAttribute="bottom" id="Tve-uJ-puR"/>
                             <constraint firstItem="9Tv-ri-XjJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XgP-KV-hms"/>
                             <constraint firstItem="Eqd-Yt-adO" firstAttribute="top" secondItem="AOK-zL-SMo" secondAttribute="bottom" constant="30" id="ceI-dd-r29"/>
-                            <constraint firstItem="3Yp-a8-A2g" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="e0L-WV-0DF"/>
                             <constraint firstItem="3Yp-a8-A2g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="efB-uc-APv"/>
                             <constraint firstItem="R3u-ID-9qm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g3K-Hf-cef"/>
                             <constraint firstItem="0Vr-Ew-Nmg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gal-FH-7Ml"/>
@@ -505,6 +505,295 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8OF-vH-Ljy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1535" y="130"/>
+        </scene>
+        <!--Rx Main View Controller-->
+        <scene sceneID="fYz-01-j4o">
+            <objects>
+                <viewController id="jHG-C3-7WM" customClass="RxMainViewController" customModule="CustomCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rG9-iu-GiF"/>
+                        <viewControllerLayoutGuide type="bottom" id="anj-sc-Gbb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Olt-Bk-dEe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hnW-1V-Le5">
+                                <rect key="frame" x="27.5" y="617" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="sGG-GU-9Yb"/>
+                                    <constraint firstAttribute="height" constant="50" id="wgq-9a-r8r"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3a-18-6yd">
+                                <rect key="frame" x="10" y="124" width="355" height="85.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="m3a-18-6yd" secondAttribute="height" multiplier="207:50" id="Wxy-nT-e1E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vuT-f6-xEi">
+                                <rect key="frame" x="0.0" y="209.5" width="375" height="81.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ha6-PU-kWU" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="81.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="AC">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBS-0W-EJt" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="94" y="0.0" width="93.5" height="81.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="C">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPV-40-k7l" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="187.5" y="0.0" width="94" height="81.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="T">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuc-tv-Npt" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="81.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="÷">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vuT-f6-xEi" secondAttribute="height" multiplier="23:5" id="dtR-bO-oo7"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bGa-Q4-cyo">
+                                <rect key="frame" x="0.0" y="291" width="375" height="81.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuW-Ce-gUh" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="81.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="7">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHc-s2-sLT" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="94" y="0.0" width="93.5" height="81.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="8">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gi3-46-JId" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="187.5" y="0.0" width="94" height="81.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="9">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tA4-9K-3XX" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="81.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="×">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bGa-Q4-cyo" secondAttribute="height" multiplier="23:5" id="DHI-CS-vBs"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="r1f-3j-3pU">
+                                <rect key="frame" x="0.0" y="372.5" width="375" height="81.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjK-Jm-8l6" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="81.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="4">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANl-Cu-qlD" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="94" y="0.0" width="93.5" height="81.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="5">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNX-Dn-ZOn" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="187.5" y="0.0" width="94" height="81.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="6">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pk-4I-jCY" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="81.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="-">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="r1f-3j-3pU" secondAttribute="height" multiplier="23:5" id="8nd-1e-rEg"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8Og-cN-iSk">
+                                <rect key="frame" x="0.0" y="454" width="375" height="81.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVR-N6-SEV">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="81.5"/>
+                                        <state key="normal" title="1"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fe-s9-RdX" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="94" y="0.0" width="93.5" height="81.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="2">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tab-5s-KMH" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="187.5" y="0.0" width="94" height="81.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="3">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PGD-NE-ll3" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="81.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8Og-cN-iSk" secondAttribute="height" multiplier="23:5" id="exb-CR-HoV"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="8br-tQ-ALS">
+                                <rect key="frame" x="0.0" y="535.5" width="375" height="81.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxl-fs-hNY" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="81.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="yxl-fs-hNY" secondAttribute="height" multiplier="34.5:15" id="OPg-Mp-rDk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="0">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V27-9I-kdl" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="187.5" y="0.0" width="94" height="81.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title=".">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdP-9K-x4M" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="81.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="DdP-9K-x4M" secondAttribute="height" multiplier="17.25:15" id="NyS-j1-7bP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="=">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8br-tQ-ALS" secondAttribute="height" multiplier="23:5" id="bUq-E5-qIU"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3q-DG-0Rn">
+                                <rect key="frame" x="125" y="60.5" width="200" height="33.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="G3q-DG-0Rn" secondAttribute="height" multiplier="6:1" id="WQ0-6S-oKb"/>
+                                    <constraint firstAttribute="width" constant="200" id="jHa-60-tyH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="setting" translatesAutoresizingMaskIntoConstraints="NO" id="h66-J1-3gp">
+                                <rect key="frame" x="16" y="30" width="60" height="60"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="8pJ-e0-6uQ"/>
+                                    <constraint firstAttribute="height" constant="60" id="IOe-pS-1JI"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cFB-jf-rpq" appends="YES" id="lFx-hV-s2z"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8br-tQ-ALS" secondAttribute="trailing" id="2W3-tl-rsD"/>
+                            <constraint firstAttribute="trailing" secondItem="m3a-18-6yd" secondAttribute="trailing" constant="10" id="2se-di-dmU"/>
+                            <constraint firstItem="r1f-3j-3pU" firstAttribute="centerX" secondItem="Olt-Bk-dEe" secondAttribute="centerX" id="39B-Fh-beY"/>
+                            <constraint firstItem="bGa-Q4-cyo" firstAttribute="top" secondItem="vuT-f6-xEi" secondAttribute="bottom" id="69z-0T-jnp"/>
+                            <constraint firstAttribute="trailing" secondItem="bGa-Q4-cyo" secondAttribute="trailing" id="6Fi-aS-kar"/>
+                            <constraint firstItem="r1f-3j-3pU" firstAttribute="top" secondItem="bGa-Q4-cyo" secondAttribute="bottom" id="9qA-RF-4xM"/>
+                            <constraint firstItem="bGa-Q4-cyo" firstAttribute="leading" secondItem="Olt-Bk-dEe" secondAttribute="leading" id="Dkt-OE-Q4k"/>
+                            <constraint firstItem="bGa-Q4-cyo" firstAttribute="centerX" secondItem="Olt-Bk-dEe" secondAttribute="centerX" id="G5A-9i-5go"/>
+                            <constraint firstAttribute="trailing" secondItem="vuT-f6-xEi" secondAttribute="trailing" id="Hpx-Cw-ITC"/>
+                            <constraint firstItem="m3a-18-6yd" firstAttribute="top" secondItem="G3q-DG-0Rn" secondAttribute="bottom" constant="30" id="JZe-df-aig"/>
+                            <constraint firstItem="h66-J1-3gp" firstAttribute="leading" secondItem="Olt-Bk-dEe" secondAttribute="leadingMargin" id="LRh-SU-m5N"/>
+                            <constraint firstItem="h66-J1-3gp" firstAttribute="top" secondItem="rG9-iu-GiF" secondAttribute="bottom" constant="10" id="Mrv-NL-aVb"/>
+                            <constraint firstItem="8Og-cN-iSk" firstAttribute="top" secondItem="r1f-3j-3pU" secondAttribute="bottom" id="PmM-Pk-9GS"/>
+                            <constraint firstAttribute="trailing" secondItem="G3q-DG-0Rn" secondAttribute="trailing" constant="50" id="Qrj-gm-1Cc"/>
+                            <constraint firstItem="vuT-f6-xEi" firstAttribute="centerX" secondItem="Olt-Bk-dEe" secondAttribute="centerX" id="Qua-Db-gzB"/>
+                            <constraint firstAttribute="trailing" secondItem="r1f-3j-3pU" secondAttribute="trailing" id="WW4-8v-EnD"/>
+                            <constraint firstItem="8br-tQ-ALS" firstAttribute="top" secondItem="8Og-cN-iSk" secondAttribute="bottom" id="XYI-hE-jhQ"/>
+                            <constraint firstItem="m3a-18-6yd" firstAttribute="centerX" secondItem="Olt-Bk-dEe" secondAttribute="centerX" id="Z0q-lJ-aSE"/>
+                            <constraint firstItem="vuT-f6-xEi" firstAttribute="leading" secondItem="Olt-Bk-dEe" secondAttribute="leading" id="amL-7t-g8i"/>
+                            <constraint firstItem="8Og-cN-iSk" firstAttribute="leading" secondItem="Olt-Bk-dEe" secondAttribute="leading" id="cHg-nJ-mFR"/>
+                            <constraint firstItem="8br-tQ-ALS" firstAttribute="leading" secondItem="Olt-Bk-dEe" secondAttribute="leading" id="gEx-tJ-1jC"/>
+                            <constraint firstItem="hnW-1V-Le5" firstAttribute="top" secondItem="8br-tQ-ALS" secondAttribute="bottom" id="hNo-fT-Hpr"/>
+                            <constraint firstItem="anj-sc-Gbb" firstAttribute="top" secondItem="hnW-1V-Le5" secondAttribute="bottom" id="hix-Jb-fiF"/>
+                            <constraint firstItem="hnW-1V-Le5" firstAttribute="centerX" secondItem="Olt-Bk-dEe" secondAttribute="centerX" id="jam-pI-GSj"/>
+                            <constraint firstItem="vuT-f6-xEi" firstAttribute="top" secondItem="m3a-18-6yd" secondAttribute="bottom" id="lsk-Np-WbO"/>
+                            <constraint firstItem="r1f-3j-3pU" firstAttribute="leading" secondItem="Olt-Bk-dEe" secondAttribute="leading" id="q81-PR-rN6"/>
+                            <constraint firstAttribute="trailing" secondItem="8Og-cN-iSk" secondAttribute="trailing" id="tJz-v8-TpG"/>
+                            <constraint firstItem="8br-tQ-ALS" firstAttribute="centerX" secondItem="Olt-Bk-dEe" secondAttribute="centerX" id="weX-NV-Qjx"/>
+                            <constraint firstItem="8Og-cN-iSk" firstAttribute="centerX" secondItem="Olt-Bk-dEe" secondAttribute="centerX" id="yzM-jS-7hc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="airthmetricExpression" destination="G3q-DG-0Rn" id="Xqf-y2-5Kk"/>
+                        <outlet property="allClear" destination="Ha6-PU-kWU" id="PKC-az-yBk"/>
+                        <outlet property="clear" destination="FBS-0W-EJt" id="TgT-Z6-pmi"/>
+                        <outlet property="divide" destination="cuc-tv-Npt" id="FcM-sd-TaZ"/>
+                        <outlet property="dot" destination="V27-9I-kdl" id="kH6-qW-orX"/>
+                        <outlet property="eight" destination="EHc-s2-sLT" id="H9y-5c-HjY"/>
+                        <outlet property="equal" destination="DdP-9K-x4M" id="uVP-5h-YRc"/>
+                        <outlet property="five" destination="ANl-Cu-qlD" id="uHx-2y-vzH"/>
+                        <outlet property="four" destination="zjK-Jm-8l6" id="pKo-Sm-fIO"/>
+                        <outlet property="minus" destination="2pk-4I-jCY" id="Ol4-B2-sFu"/>
+                        <outlet property="multiply" destination="tA4-9K-3XX" id="NWL-V6-Nsf"/>
+                        <outlet property="nine" destination="Gi3-46-JId" id="mOH-xa-1C8"/>
+                        <outlet property="one" destination="AVR-N6-SEV" id="Pzf-HP-JdG"/>
+                        <outlet property="plus" destination="PGD-NE-ll3" id="tUH-o8-W04"/>
+                        <outlet property="result" destination="m3a-18-6yd" id="I7r-Ao-3aV"/>
+                        <outlet property="seven" destination="IuW-Ce-gUh" id="rAH-1f-7tT"/>
+                        <outlet property="six" destination="hNX-Dn-ZOn" id="Xkl-M4-E0U"/>
+                        <outlet property="tax" destination="IPV-40-k7l" id="XRt-4h-cb7"/>
+                        <outlet property="three" destination="tab-5s-KMH" id="fRB-Qw-ufe"/>
+                        <outlet property="two" destination="3fe-s9-RdX" id="Brs-9i-5LD"/>
+                        <outlet property="zero" destination="yxl-fs-hNY" id="c1X-PJ-Kub"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G3O-de-zjO" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="cFB-jf-rpq"/>
+            </objects>
+            <point key="canvasLocation" x="-778" y="803"/>
         </scene>
     </scenes>
     <resources>

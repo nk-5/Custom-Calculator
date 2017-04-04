@@ -1,15 +1,30 @@
 PODS:
+  - RxBlocking (3.2.0):
+    - RxSwift (~> 3.1)
+  - RxCocoa (3.2.0):
+    - RxSwift (~> 3.1)
+  - RxSwift (3.2.0)
+  - RxTest (3.2.0):
+    - RxSwift (~> 3.0)
   - SideMenu (2.2.0)
   - SwiftyButton (0.6.0)
 
 DEPENDENCIES:
+  - RxBlocking (~> 3.0)
+  - RxCocoa (~> 3.0)
+  - RxSwift (~> 3.0)
+  - RxTest (~> 3.0)
   - SideMenu
   - SwiftyButton
 
 SPEC CHECKSUMS:
+  RxBlocking: ec8ed471ba77b4fb98a2d60f1f8419b0b46eaa23
+  RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
+  RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
+  RxTest: 85fdd6f753e8e62635a58d37bbdd3ce7d5abbef3
   SideMenu: eeff6b85456c5c6e14165655691d2033f6b24969
   SwiftyButton: 4c9b61c499f172971a1b8c2eebbbdc20a26d8a08
 
-PODFILE CHECKSUM: c702940fa8bbb2ecb1734ec84f262d33d3c7d7f3
+PODFILE CHECKSUM: 8b188d21d2c97580ca31e81af9309db0725451bb
 
 COCOAPODS: 1.2.0
